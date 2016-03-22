@@ -14,9 +14,7 @@ namespace abstr_cc
     public:
         Ram(std::size_t size)
         {
-            _memory.reserve(size);
-            for (std::size_t i = 0; i < size; i++)
-                _memory.push_back(T());
+            _memory.resize(size);
         }
 
         std::size_t size() const { return _memory.size(); }
