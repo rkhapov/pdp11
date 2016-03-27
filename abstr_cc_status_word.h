@@ -10,6 +10,13 @@ namespace abstr_cc
     class StatusWord
     {
     public:
+        StatusWord():
+            _flag(word_t())
+        {}
+
+        StatusWord(const word_t &flag):
+            _flag(flag)
+        {}
 
         //Setting bit in _flag
         void set(int flagNumber, bool value)

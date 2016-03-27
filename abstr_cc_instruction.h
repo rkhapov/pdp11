@@ -11,13 +11,13 @@
 
 namespace abstr_cc
 {
-    template <class Code_t, class InstructionCode_t, std::size_t size>
+    template <class Code_t, class InstructionCmd_t, std::size_t size>
     class Instruction
     {
     public:
-        Instruction(const Code_t &code, const InstructionCode_t &instructionCode):
+        Instruction(const Code_t &code, const InstructionCmd_t &instructionCmd):
             _code(code),
-            _instructionCode(instructionCode)
+            _instructionCmd(instructionCmd)
         {}
 
 
@@ -26,10 +26,12 @@ namespace abstr_cc
 
         virtual void execute() const = 0;
 
+        const InstructionCmd_t &getCmd() const { return _instructionCmd; }
+
     private:
         Code_t _code;
 
-        InstructionCode_t _instructionCode;
+        InstructionCmd_t _instructionCmd;
     };
 }
 
