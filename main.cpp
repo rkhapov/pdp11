@@ -1,15 +1,16 @@
 #include <iostream>
 
-#include "pdp11_cpu.h"
 #include "pdp11_alu.h"
-#include "pdp11_ram.h"
-
-#include <limits>
 
 int main()
 {
 
-    std::cout << std::numeric_limits<pdp11::word>::min() << std::endl;
+    pdp11::uword v = 0xAABB;
+
+    v = (v >> 8) | (v << 8);
+
+    std::cout << std::hex << v << std::endl;
+    std::cout << int((pdp11::byte)v) << std::endl;
 
     return 0;
 }

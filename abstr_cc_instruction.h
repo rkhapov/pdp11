@@ -5,10 +5,6 @@
 
 #include <cstddef>
 
-#include "abstr_cc_alu.h"
-#include "abstr_cc_cpu.h"
-#include "abstr_cc_memory.h"
-
 namespace abstr_cc
 {
     template <class Code_t, class InstructionCmd_t, std::size_t size>
@@ -24,8 +20,7 @@ namespace abstr_cc
         //size of instruction (in bytes)
         std::size_t getSize() const { return size; }
 
-        virtual void execute() const = 0;
-
+        const Code_t &getCode() const { return _code; }
         const InstructionCmd_t &getCmd() const { return _instructionCmd; }
 
     private:

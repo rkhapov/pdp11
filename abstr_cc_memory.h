@@ -27,6 +27,14 @@ namespace abstr_cc
             _memory[index] = value;
         }
 
+        T &get(std::size_t index)
+        {
+            if (index >= _memory.size())
+                throw std::out_of_range("abstr_cc::Memory::get -> index out of range");
+
+            return _memory[index];
+        }
+
         const T &get(std::size_t index) const
         {
             if (index >= _memory.size())

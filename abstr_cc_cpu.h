@@ -30,6 +30,15 @@ namespace abstr_cc
             return _registers[registerNumber];
         }
 
+
+        word_t &getRegister(int registerNumber)
+        {
+            if (registerNumber < 0 || registerNumber >= regNumber)
+                throw std::out_of_range("Cpu register out of range");
+
+            return _registers[registerNumber];
+        }
+
         int getRegisterNumber() const { return regNumber; }
 
         const StatusWord_t &getStatusWord() const { return _flags; }

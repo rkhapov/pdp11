@@ -27,6 +27,8 @@ namespace abstr_cc
                 _flag &= ~(1 << flagNumber);
         }
 
+        bool get(int flagNumber) const { return (_flag & (1 << flagNumber)) != 0; }
+
         word_t getValue() const { return _flag; }
 
     private:
