@@ -247,6 +247,9 @@ namespace pdp11
         cpu.getStatusWord().setCarry(0);
         cpu.getStatusWord().setOverflow(0);
         cpu.getStatusWord().setNegative((byte)result < 0);
+        cpu.getStatusWord().setZero((ubyte)result == 0);
+
+        operand.setWord(cpu, ram, result);
 
         return 0;
     }

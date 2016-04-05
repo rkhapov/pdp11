@@ -5,12 +5,9 @@
 int main()
 {
 
-    pdp11::uword v = 0xAABB;
+    pdp11::uword v = (pdp11::uword)(int)-1;
 
-    v = (v >> 8) | (v << 8);
-
-    std::cout << std::hex << v << std::endl;
-    std::cout << int((pdp11::byte)v) << std::endl;
+    std::cout << v << std::endl;
 
     return 0;
 }
