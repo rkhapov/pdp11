@@ -1,6 +1,11 @@
 #ifndef PDP11_ONE_OP_TABLE_H
 #define PDP11_ONE_OP_TABLE_H
 
+/*
+ * Instruction with one operand
+ * ROR, ROL, ASR, ASL, SXT, COM are not supported now
+*/
+
 #include "pdp11_instruction.h"
 
 namespace pdp11
@@ -25,8 +30,6 @@ namespace pdp11
 
     int NegCmd(uword instructionCode, Cpu &cpu, Ram &ram, Alu &alu);
     int NegbCmd(uword instructionCode, Cpu &cpu, Ram &ram, Alu &alu);
-
-    //ROR, ROL, ASR, ASL, SXT, COM are not supported now
 
     int SwabCmd(uword instructionCode, Cpu &cpu, Ram &ram, Alu &alu);
 

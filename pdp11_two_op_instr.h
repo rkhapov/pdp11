@@ -1,6 +1,11 @@
 #ifndef PDP11_TWO_OP_INSTR_H
 #define PDP11_TWO_OP_INSTR_H
 
+/*
+ * Two operand instructions
+ * bit instruction are not supported now
+*/
+
 #include "pdp11_instruction.h"
 
 namespace pdp11
@@ -13,8 +18,6 @@ namespace pdp11
 
     int CmpCmd(uword instructionCode, Cpu &cpu, Ram &ram, Alu &alu);
     int CmpbCmd(uword instructionCode, Cpu &cpu, Ram &ram, Alu &alu);
-
-    //bit instruction are not supported now
 
     extern TwoOperandInstruction Mov;
     extern TwoOperandInstruction Movb;

@@ -1,7 +1,10 @@
 #ifndef ABSRT_CC_INSTRUCTION_H
 #define ABSRT_CC_INSTRUCTION_H
 
-//Abstract computer instruction type
+/*
+ * Abstract computer instruction type
+ * Support control of code instrction, and commands (what instruction should do)
+*/
 
 #include <cstddef>
 
@@ -11,6 +14,8 @@ namespace abstr_cc
     class Instruction
     {
     public:
+        virtual ~Instruction() {}
+
         Instruction(const Code_t &code, const InstructionCmd_t &instructionCmd):
             _code(code),
             _instructionCmd(instructionCmd)

@@ -1,6 +1,10 @@
 #ifndef PDP11_PSW_INSTR_H
 #define PDP11_PSW_INSTR_H
 
+/*
+ * Instructions to control Psw
+*/
+
 #include "pdp11_instruction.h"
 
 namespace pdp11

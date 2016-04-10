@@ -1,8 +1,11 @@
 #ifndef ABSTR_CC_STATUS_WORD_H
 #define ABSTR_CC_STATUS_WORD_H
 
-//Abstract status word (flag)
-//word_t should be an integer type
+/*
+ * Abstract status word (flag)
+ * Support controling flag's bits. therefore word_t should be an integer type
+ * (or other class which support <<, |, ~, &)
+*/
 
 namespace abstr_cc
 {
@@ -10,6 +13,8 @@ namespace abstr_cc
     class StatusWord
     {
     public:
+        virtual ~StatusWord() {}
+
         StatusWord():
             _flag(word_t())
         {}

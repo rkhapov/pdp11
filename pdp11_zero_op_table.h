@@ -2,6 +2,7 @@
 #define PDP11_ZERO_OP_TABLE_H
 
 //Zero operand instruction table
+//wait and reset are not supported now
 
 #include "pdp11_instruction.h"
 
@@ -12,8 +13,6 @@ namespace pdp11
 
     extern ZeroOperandInstruction Halt;
     extern ZeroOperandInstruction Nop;
-
-    //wait and reset are not supported now
 }
 
 #endif // PDP11_ZERO_OP_TABLE_H

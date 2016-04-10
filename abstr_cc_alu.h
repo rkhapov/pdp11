@@ -14,6 +14,7 @@ namespace abstr_cc
     class Alu
     {
     public:
+        virtual ~Alu() {}
 
         //Standart arithmetical function
         virtual word_t add(word_t w1, word_t w2, StatusWord &sw) const = 0;

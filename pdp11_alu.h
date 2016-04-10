@@ -1,7 +1,10 @@
 #ifndef ALU_H
 #define ALU_H
 
-//ALU for arithmetical, logical and other operation
+/*
+ * ALU for arithmetical, logical and other operation
+ * Also addeding Psw control-methods and operand-decode methods
+*/
 
 #include "abstr_cc_alu.h"
 

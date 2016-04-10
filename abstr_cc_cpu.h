@@ -1,7 +1,10 @@
 #ifndef ABSTR_CC_CPU_H
 #define ABSTR_CC_CPU_H
 
-//Abstract CPU
+/*
+ * CPU contains registers and status word
+ * both of this user can manipulate
+*/
 
 #include <stdexcept>
 
@@ -13,6 +16,7 @@ namespace abstr_cc
     class Cpu
     {
     public:
+        virtual ~Cpu() {}
 
         void setRegister(int registerNumber, const word_t &value)
         {

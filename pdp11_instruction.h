@@ -1,6 +1,16 @@
 #ifndef PDP11_INSTRUCTION_H
 #define PDP11_INSTRUCTION_H
 
+/*
+ * PDP-11 Instruction.
+ * There are Abstract class Instruction and
+ * - ZeroOperandInstruction - instruction which have no perametrs (as Nop and Ccc)
+ * - OneOperandInstruction - instruction which have one parametr
+ * - BranchInstruction - branch instruction with one parameter - offset
+ * - OneAndHalfOperand - one operand and some register (such as MUL) - not used on this version
+ * - TwoOperandInstruction - two operand (as Mov)
+*/
+
 #include <string>
 
 #include "pdp11_types.h"
@@ -13,12 +23,14 @@
 namespace pdp11
 {
     //Type of instruction commands
-    enum { HALT = 1, DIVISION_BY_ZERO, MEMORY_ADRESS_ERROR };
+    enum { HALT = 1, DIVISION_BY_ZERO, MEMORY_ADRESS_ERROR, UNKNOWN_INSTRUCTION };
     typedef int (*InstructionCmd)(uword, Cpu&, Ram&, Alu&);
 
     class Instruction: public abstr_cc::Instruction<uword, InstructionCmd, 2>
     {
     public:
+        virtual ~Instruction() {}
+
         Instruction(const std::string &mnemonic, uword code, InstructionCmd cmd):
             abstr_cc::Instruction<uword, InstructionCmd, 2>(code, cmd),
             _mnemonic(mnemonic)

@@ -1,7 +1,12 @@
 #ifndef ABSTR_CC_MEMORY_H
 #define ABSTR_CC_MEMORY_H
 
-//Abstract Ram
+/*
+ * Abstract Ram
+ * Support methods:
+ * get\set to control elements
+ * size to get size
+*/
 
 #include <vector>
 #include <stdexcept>
@@ -12,6 +17,8 @@ namespace abstr_cc
     class Ram
     {
     public:
+        virtual ~Ram() {}
+
         Ram(std::size_t size)
         {
             _memory.resize(size);
